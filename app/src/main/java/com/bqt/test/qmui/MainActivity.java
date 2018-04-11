@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.qmuiteam.qmui.util.QMUIDisplayHelper;
 import com.qmuiteam.qmui.util.QMUIKeyboardHelper;
 import com.qmuiteam.qmui.util.QMUIResHelper;
+import com.qmuiteam.qmui.util.QMUIStatusBarHelper;
 import com.qmuiteam.qmui.util.QMUIViewHelper;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialog;
 import com.qmuiteam.qmui.widget.dialog.QMUIDialogAction;
@@ -32,6 +33,7 @@ public class MainActivity extends ListActivity {
 	
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		QMUIStatusBarHelper.setStatusBarLightMode(this);
 		mcContext = this;
 		String[] array = new String[]{
 				"消息类型对话框（蓝色按钮）",
@@ -51,6 +53,7 @@ public class MainActivity extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		mCurrentDialogStyle = b ? com.qmuiteam.qmui.R.style.QMUI_Dialog : R.style.DialogTheme2;
+		
 		b = !b;
 		switch (position) {
 			case 0:
@@ -166,15 +169,14 @@ public class MainActivity extends ListActivity {
 		final QMUIDialog.MultiCheckableDialogBuilder builder = new QMUIDialog.MultiCheckableDialogBuilder(mcContext)
 				.setCheckedItems(new int[]{1, 3})
 				.addItems(items, (dialog, which) -> {
-				
 				});
 		builder.addAction("取消", (dialog, index) -> dialog.dismiss());
 		builder.addAction("提交", (dialog, index) -> {
-			String result = "你选择了 ";
+			StringBuilder result = new StringBuilder("你选择了 ");
 			for (int i = 0; i < builder.getCheckedItemIndexes().length; i++) {
-				result += "" + builder.getCheckedItemIndexes()[i] + "; ";
+				result.append("").append(builder.getCheckedItemIndexes()[i]).append("; ");
 			}
-			Toast.makeText(mcContext, result, Toast.LENGTH_SHORT).show();
+			Toast.makeText(mcContext, result.toString(), Toast.LENGTH_SHORT).show();
 			dialog.dismiss();
 		});
 		builder.create(mCurrentDialogStyle).show();
@@ -189,15 +191,14 @@ public class MainActivity extends ListActivity {
 		final QMUIDialog.MultiCheckableDialogBuilder builder = new QMUIDialog.MultiCheckableDialogBuilder(mcContext)
 				.setCheckedItems(new int[]{1, 3})
 				.addItems(items, (dialog, which) -> {
-				
 				});
 		builder.addAction("取消", (dialog, index) -> dialog.dismiss());
 		builder.addAction("提交", (dialog, index) -> {
-			String result = "你选择了 ";
+			StringBuilder result = new StringBuilder("你选择了 ");
 			for (int i = 0; i < builder.getCheckedItemIndexes().length; i++) {
-				result += "" + builder.getCheckedItemIndexes()[i] + "; ";
+				result.append("").append(builder.getCheckedItemIndexes()[i]).append("; ");
 			}
-			Toast.makeText(mcContext, result, Toast.LENGTH_SHORT).show();
+			Toast.makeText(mcContext, result.toString(), Toast.LENGTH_SHORT).show();
 			dialog.dismiss();
 		});
 		builder.create(mCurrentDialogStyle).show();
