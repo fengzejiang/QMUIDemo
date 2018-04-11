@@ -15,7 +15,7 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String[] array = {"QMUIDialog",
-				"QMUIBottomSheet、QMUITipDialog",
+				"QMUIBottomSheet 和 QMUITipDialog",
 				"",
 				"",
 				"",
