@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".QMUIDialogActivity"/>
-        <activity android:name=".BottomSheet_TipDialogActivity"/>
+        <activity android:name=".BottomSheet_TipDialog_PopupActivity"/>
     </application>
 
 </manifest>

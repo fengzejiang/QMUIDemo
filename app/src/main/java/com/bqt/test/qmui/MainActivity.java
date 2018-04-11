@@ -15,7 +15,7 @@ public class MainActivity extends ListActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		String[] array = {"QMUIDialog",
-				"QMUIBottomSheet 和 QMUITipDialog",
+				"QMUIBottomSheet 和 QMUITipDialog 和 QMUIPopup",
 				"",
 				"",
 				"",
@@ -30,7 +30,7 @@ public class MainActivity extends ListActivity {
 				startActivity(new Intent(this, QMUIDialogActivity.class));
 				break;
 			case 1:
-				startActivity(new Intent(this, BottomSheet_TipDialogActivity.class));
+				startActivity(new Intent(this, BottomSheet_TipDialog_PopupActivity.class));
 				break;
 			case 2:
 				startActivity(new Intent(this, QMUIDialogActivity.class));
