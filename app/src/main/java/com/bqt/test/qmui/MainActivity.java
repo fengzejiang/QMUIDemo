@@ -16,9 +16,7 @@ public class MainActivity extends ListActivity {
 		super.onCreate(savedInstanceState);
 		String[] array = {"QMUIDialog",
 				"QMUIBottomSheet 和 QMUITipDialog 和 QMUIPopup",
-				"",
-				"",
-				"",
+				"QMUITabSegment",
 				"",};
 		setListAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, new ArrayList<>(Arrays.asList(array))));
 	}
@@ -33,7 +31,7 @@ public class MainActivity extends ListActivity {
 				startActivity(new Intent(this, BottomSheet_TipDialog_PopupActivity.class));
 				break;
 			case 2:
-				startActivity(new Intent(this, QMUIDialogActivity.class));
+				startActivity(new Intent(this, QMUITabSegmentActivity.class));
 				break;
 		}
 	}

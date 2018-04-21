@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".QMUIDialogActivity"/>
         <activity android:name=".BottomSheet_TipDialog_PopupActivity"/>
+        <activity android:name=".QMUITabSegmentActivity"/>
     </application>
 
 </manifest>
